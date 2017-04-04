@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="4.48333in" height="2.38in" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 4.48333 2.38"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil0 {fill:white}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <polygon class="fil0" points="0.649555,1.69109 0.112894,1.69109 0.381224,1.95942 "/>
+  <polygon class="fil0" points="0.1035,1.70048 0.1035,2.23714 0.371831,1.96881 "/>
+  <polygon class="fil0" points="0.112894,2.24654 0.649555,2.24654 0.381224,1.97821 "/>
+  <polygon class="fil0" points="1.71217,1.70048 1.71217,2.23714 1.44384,1.96881 "/>
+  <polygon class="fil0" points="1.70277,2.24654 1.16611,2.24654 1.43444,1.97821 "/>
+  <polygon class="fil0" points="1.15672,2.23714 1.15672,1.70048 1.42505,1.96881 "/>
+  <circle class="fil0" cx="0.835869" cy="1.96881" r="0.268328"/>
+  <circle class="fil0" cx="2.02425" cy="1.96881" r="0.268328"/>
+  <rect class="fil0" transform="matrix(5.34101E-015 -0.441101 0.403331 2.33647E-014 2.63023 2.23714)" width="0.608315" height="0.608315"/>
+  <rect class="fil0" x="2.34832" y="1.70048" width="0.268328" height="0.536656"/>
+  <polygon class="fil0" points="3.47675,2.23714 2.94009,2.23714 3.20842,1.6947 "/>
+  <path class="fil0" d="M4.13979 1.96881l0 -0.268331c0.148193,0 0.268327,0.120134 0.268327,0.268331 0,0.148193 -0.120134,0.268327 -0.268327,0.268327l0 -0.268327z"/>
+  <polygon class="fil0" points="4.07253,2.23714 4.07253,1.70048 3.8042,1.96881 "/>
+  <polygon class="fil0" points="4.05429,2.23714 3.52647,1.70932 3.52647,2.23714 "/>
+  <polygon class="fil0" points="2.94264,0.133996 1.63715,0.133992 2.2899,0.78674 "/>
+  <polygon class="fil0" points="1.62775,0.143386 1.62775,1.44888 2.2805,0.796134 "/>
+  <polygon class="fil0" points="1.63715,1.45828 2.94264,1.45828 2.28989,0.805528 "/>
+ </g>
+</svg>

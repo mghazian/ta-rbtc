@@ -1,0 +1,6 @@
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^tutorial\.seveid\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.tutorial\.seveid\.com$
+RewriteRule ^/?$ "https\:\/\/drive\.google\.com\/folderview\?id\=0B1r_b0zepBY4SExsVkdScWVpMUU\&amp\;usp\=sharing" [R=301,L]
+

@@ -1,0 +1,226 @@
+==========
+26-04-2016
+==========
+
+Changed:
+[@] Tweaked the database.php (god have mercy with the 'dbprefix')
+
+Added:
+[+] application/models/Guru_Model.php
+
+ 	[+] __construct()
+	Basic. Calls the parent constructor
+
+	[+] get_all()
+	Gets all information from table 'guru'. Returns the generic form of executed query. Further processing is needed, e.g. $var->result()
+
+	[+] search_by_name ($name)
+	Gets all information from table 'guru' with column name 'nama' = $name. Returns the generic form of executed query. Further processing is needed
+
+	[+] search_by_id ($nik)
+	Gets all information from table 'guru' with column name 'nik' = $nik. Returns the generic form of executed query. Further processing is needed
+
+	[+] insert()
+	Inserts new record into table 'guru'. Uses $_POST. Further explanation can be found in the file
+
+	[+] update()
+	Changes a record's value into another. Uses $_POST. Further explanation can be found in the file
+
+	[+] delete ($nik)
+	Deletes a record with the 'nik'-s value is $nik
+
+[+] application/models/Kelas_Model.php
+
+	[+] __construct()
+	Basic. Calls the parent constructor
+
+	[+] get_all()
+	Gets all information from table 'kelas'. Returns the generic form of executed query. Further processing is needed, e.g. using $var->result()
+
+	[+] insert()
+	Inserts new record into table 'kelas'. Uses $_POST. Further explanation can be found in the file
+
+	[+] update()
+	Changes a record's value into another. Uses $_POST. Further explanation can be found in the file
+
+	[+] delete ($id)
+	Deletes a record with the 'id'-s value is $id
+
+==========
+27-04-2016
+==========
+
+Changed:
+[@] Changes how the model manages record's value into using array
+[@] Minor commenting at application/models/Kelas_Model.php
+[@] Fixed names. Should be consistent with the convention used now (Snake_Camel_Case), also clearer context are given
+
+Added:
+[+] application/models/Mapel_Model.php
+
+	[+] __construct()
+	Basic. Calls the parent constructor
+
+	[+] get_all()
+	Gets all information from table 'kelas'. Returns the generic form of executed query. Further processing is needed, e.g. using $var->result()
+
+	[+] insert()
+	Inserts new record into table 'kelas'. Uses $_POST. Further explanation can be found in the file
+
+	[+] update()
+	Changes a record's value into another. Uses $_POST. Further explanation can be found in the file
+
+	[+] delete ($kode_mapel)
+	Deletes a record with the 'kode_mapel'-s value is $kode_mapel
+
+[+] application/models/Penilaian_Model.php
+
+	[+] __construct()
+	Basic. Calls the parent constructor
+
+	[+] get_all()
+	Gets all information from table 'kelas'. Returns the generic form of executed query. Further processing is needed, e.g. using $var->result()
+
+	[+] insert()
+	Inserts new record into table 'nilai'. Uses $_POST. Further explanation can be found in the file
+
+	[+] update_field ()
+	Changes a record's value into another. Only change non-key fields. Uses $_POST. Further explanation can be found in the file
+
+	[+] update_key ()
+	Changes a record's value into another. Only change key fields. Uses $_POST. Further explanation can be found in the file
+
+	[+] delete ($nisn, $kode_mapel)
+	Deletes a record with the 'nisn'-s value is $nisn, and 'kode_mapel'-s value is $kode_mapel
+
+[+] application/models/Siswa_Model.php
+
+	[+] __construct()
+	Basic. Calls the parent constructor
+
+	[+] get_all()
+	Gets all information from table 'kelas'. Returns the generic form of executed query. Further processing is needed, e.g. using $var->result()
+
+	[+] insert()
+	Inserts new record into table 'siswa'. Uses $_POST. Further explanation can be found in the file
+
+	[+] update()
+	Changes a record's value into another. Uses $_POST. Further explanation can be found in the file
+
+	[+] delete ($nisn)
+	Deletes a record with the 'nisn'-s value is $nisn
+
+==========
+29-04-2016
+==========
+
+Changed:
+[@] Base URL in application/config/config.php
+
+Added:
+[+] application/controllers/Home.php
+[+] application/controllers/Penilaian.php
+[+] application/views/footer/footer.php
+[+] application/views/header/header.php
+[+] application/views/home/home.php
+[+] application/views/home/opsi.php
+[+] application/views/navbar/navbar.php
+[+] application/views/penilaian/cetaknilai.php
+[+] assets/assets/interface.png
+[+] assets/css/materialize.css
+[+] assets/css/seve.css
+[+] assets/img/banner web-01.png
+[+] assets/img/parallax1_1.png
+[+] assets/img/parallax2_1.png
+
+==========
+30-04-2016
+==========
+
+Changed:
+[@] More things in application/controllers/Home.php
+[@] Edited some value in application/views/home/home.php
+[@] Edited some value in application/views/home/opsi.php
+[@] Cleared redundancy in application/views/navbar/navbar.php
+[@] Edited the looks in application/views/penilaian/cetaknilai.php
+
+Added:
+[+] application/controllers/Guru.php
+[+] application/controllers/Kelas.php
+[+] application/controllers/Model.php
+[+] application/controllers/Siswa.php
+[+] application/views/guru/cetakguru.php
+[+] application/views/kelas/cetakkelas.php
+[+] application/views/mapel/cetakmapel.php
+[+] application/views/penilaian/opsimatpel.php
+[+] application/views/siswa/cetaksiswa.php
+
+==========
+08-05-2016
+==========
+
+Changed:
+[@] Return value of query to OOP-like in all models
+[@] For god's sake the config/database is messing with me. Gotta remember to push it
+[@] Implements database loading at models' constructor
+[@] Every controller index is set to 'cetak' counterpart
+[@] Typo at application/models/Siswa_Model.php
+[@] Implements proper view for every cetak___.php file
+
+Added:
+[+] Constructor for every controller
+[+] Added function at application/models/Kelas_Model.php
+
+==========
+09-07-2016
+==========
+
+Changed:
+[@] Guru now show the real data
+[@] Mapel now show the real data
+[@] Kelas now show the real data
+[@] Siswa now show the real data
+
+Added:
+[+] Guru, Mapel, Kelas, Siswa controller now has constructor
+[+] Models documentation
+[+] 'nik_wali_kelas' column in view 'readable_kelas'
+
+==========
+13-07-2016
+==========
+
+Changed:
+[@] Mata Pelajaran dropdown in view/penilaian/cetaknilai should be functional now
+
+Added:
+[+] Penilaian controller now has constructor
+[+] Function to fetch 'kelas' identifier (id, tingkat, jurusan, nomor kelas, tahun ajar) (get_class) 
+[+] Function to fetch 'mapel' identifier (kode_mapel, nama) (get_subject)
+
+==========
+15-07-2016
+==========
+
+Changed:
+[@] 'verifikasi_guru' in controller/Guru is now 'verifikasi_tambah'
+[@] 'verifikasi_mapel' in controller/Mapel is now 'verifikasi_tambah'
+[@] 'verifikasi_kelas' in controller/Kelas is now 'verifikasi_tambah'
+[@] 'verifikasi_siswa' in controller/Siswa is now 'verifikasi_tambah'
+[@] Insertion form of 'Guru' is functional
+[@] Insertion form of 'Mapel' is functional
+<<<<<<< HEAD
+[@] Insertion form of 'Kelas' is functional
+
+==========
+16-07-2016
+==========
+
+Changed:
+[@] Insertion form of 'Siswa' is functional
+
+Added:
+[+] Error message when trying to input identical record of 'Kelas'
+=======
+[@] Insertion form of 'Kelas' is functional
+>>>>>>> 404e20f3bb63b17b64f87161c15d146eb3e9ca98
