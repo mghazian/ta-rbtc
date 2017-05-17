@@ -1,6 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+require_once 'Generic_model.php';
+
 class Poster_model extends Generic_model
 {
 	public function __construct()
@@ -50,6 +52,14 @@ class Poster_model extends Generic_model
 
 		$this->db->where ('id_poster', $id_poster);
 		return $this->db->update ('data_poster', $data);
+	}
+
+	public function find_id ($id_poster)
+	{
+		$this->db->where ('id_poster', $id_poster);
+		$result = $this->db->get ('data_poster');
+
+		return $result->row_array();
 	}
 }
 

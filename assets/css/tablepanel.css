@@ -1,0 +1,27 @@
+.table-panel {
+    margin: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: block;
+}
+
+.table-panel-header {
+    padding: 0.8em 0.8em 0.8em 2em;
+    background-color: #270;
+    color: #efe;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    font-size: 1.2em;
+}
+
+.table-panel-body {
+    padding: 12px;
+    background-color: #fff;
+    border: 1px solid #270;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.table-panel-button {
+    background-color: #270;
+    color: #fff;
+}
