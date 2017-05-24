@@ -3,14 +3,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Uploader {
 
+	private $folder_name;
 	private $save_dir;
 	private $ds;
 
 	public function __construct()
 	{
-		$ds = DIRECTORY_SEPARATOR;
+		$this->ds = DIRECTORY_SEPARATOR;
 		$basepath = dirname (APPPATH);
-		$this->save_dir = $basepath . $ds . 'upload' . $ds;
+		$this->folder_name = 'upload';
+		$this->save_dir = $basepath . $this->ds . $this->folder_name . $this->ds;
 
 		if ( ! file_exists ($this->save_dir) )
 			mkdir ($this->save_dir);
@@ -27,9 +29,9 @@ class Uploader {
 			unlink ($target_file);
 			rename ($target_file . '_' . $tmp_name, $target_file);
 
-			return ( file_exists ($target_file) ) ? $target_file : NULL;
+			return ( file_exists ($target_file) ) ? $this->folder_name . $this->ds . $file['name'] : NULL;
 		}
-
-		return (move_uploaded_file ($file['tmp_name'], $target_file) ) ? $target_file : NULL;
+		
+		return (move_uploaded_file ($file['tmp_name'], $target_file) ) ? $this->folder_name . $this->ds . $file['name'] : NULL;
 	}
 }

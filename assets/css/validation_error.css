@@ -1,0 +1,20 @@
+.validation-error {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.validation-error>.validation-error-header {
+    border-radius: 30px;
+    background-color: #fff;
+    color: #e98;
+    padding-left: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.validation-error>.validation-error-body {
+    border-radius: 30px;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #faa;
+    color: #222;
+}

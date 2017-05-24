@@ -6,7 +6,7 @@
 					<i class="fa fa-folder-open"></i><b> TOTAL POSTER</b>
 				</div>
 				<div class="stat-box-body">
-					<strong>123</strong>
+					<strong><?php echo $total_poster; ?></strong>
 				</div>
 			</div>
 		</div>
@@ -16,7 +16,7 @@
 					<i class="fa fa-print"></i><b> POSTER TERCETAK</b>
 				</div>
 				<div class="stat-box-body">
-					<strong>4</strong>
+					<strong><?php echo $total_tercetak; ?></strong>
 				</div>
 			</div>
 		</div>
@@ -38,22 +38,21 @@
 							</tr>
 						</thead>
 						<tbody>
+							<?php for ($i = 0; $i < count ($poster_mutakhir); $i++)
+							{
+								$poster = $poster_mutakhir[$i];
+							?>
 							<tr>
-								<td>1</td>
-								<td>Bercinta dalam lumpur</td>
-								<td>Bambang</td>
-								<td>1 Jan 2009</td>
+								<td><?php echo $i + 1; ?></td>
+								<td><?php echo $poster['judul_publikasi']; ?></td>
+								<td><?php echo $poster['nama_penulis']; ?></td>
+								<td><?php echo date_format ( date_create_from_format ('Y-m-d H:i:s', $poster['waktu_entri']), 'j F Y' ); ?></td>
 							</tr>
-							<tr>
-								<td>2</td>
-								<td>Beranak dalam kubur</td>
-								<td>Waluyo</td>
-								<td>9 Des 2013</td>
-							</tr>
+							<?php } ?>
 						</tbody>
 					</table>
 					<div class="pull-right">
-						<a href="#"><button class="btn btn-sm table-panel-button">Semua</button></a>
+						<a href="<?php echo base_url ('admin/poster') . '?order=newest'; ?>"><button class="btn btn-sm table-panel-button">Semua</button></a>
 					</div>
 				</div>
 			</div>
@@ -75,24 +74,22 @@
 							</tr>
 						</thead>
 						<tbody>
+							<?php for ($i = 0; $i < count ($poster_tercetak); $i++)
+							{
+								$poster = $poster_tercetak[$i];
+							?>
 							<tr>
-								<td>1</td>
-								<td>Bercinta dalam lumpur</td>
-								<td>Bambang</td>
-								<td>1 Jan 2009</td>
-								<td>10 Feb 2015</td>
+								<td><?php echo $i + 1; ?></td>
+								<td><?php echo $poster['judul_publikasi']; ?></td>
+								<td><?php echo $poster['nama_penulis']; ?></td>
+								<td><?php echo date_format ( date_create_from_format ('Y-m-d H:i:s', $poster['waktu_entri']), 'j F Y' ); ?></td>
+								<td><?php echo date_format ( date_create_from_format ('Y-m-d H:i:s', $poster['waktu_cetak']), 'j F Y' ); ?></td>
 							</tr>
-							<tr>
-								<td>2</td>
-								<td>Beranak dalam kubur</td>
-								<td>Waluyo</td>
-								<td>9 Des 2013</td>
-								<td>27 Jun 2016</td>
-							</tr>
+							<?php } ?>
 						</tbody>
 					</table>
 					<div class="pull-right">
-						<a href="#"><button class="btn btn-sm table-panel-button">Semua</button></a>
+						<a href="<?php echo base_url ('admin/poster_tercetak'); ?>"><button class="btn btn-sm table-panel-button">Semua</button></a>
 					</div>
 				</div>
 			</div>

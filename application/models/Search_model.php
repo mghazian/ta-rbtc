@@ -8,6 +8,13 @@ class Search_model extends CI_Model
 		parent::__construct();
 		$this->load->database();
 	}
+
+	public function search ($keyword)
+	{
+		$this->db->like ($keyword);
+
+		return $this->db->get('data_poster')->result_array();
+	}
 }
 
 ?>

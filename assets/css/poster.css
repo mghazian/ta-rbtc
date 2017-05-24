@@ -1,0 +1,46 @@
+#poster {
+    margin: 15px;
+    padding: 15px;
+}
+
+.poster-header {
+    margin-bottom: 15px;
+    padding: 15px;
+    width: 100%;
+    height: xxx;
+    overflow: hidden;
+    border-radius: 20px;
+    background-color: #ccf;
+    font-size: 2em;
+    text-align: center;
+    vertical-align: middle;
+    text-transform: uppercase;
+}
+
+.poster-body {
+    padding: 15px;
+    width: 100%;
+    height: xxx;
+    overflow: hidden;
+    background-color: #fff;
+    font-size: 1.2em;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.poster-footer {
+    background-color: #fff;
+    font-size: 1.2em;
+    padding: 15px;
+    width: 100%;
+    height: xxx;
+    overflow: hidden;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.poster-body img {
+    padding: 10px;
+    width: 100%;
+    height: auto;
+}

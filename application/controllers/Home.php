@@ -14,6 +14,9 @@ class Home extends CI_Controller {
 
 	function cari()
 	{
+		if ( $this->session->has_userdata ('username') )
+			redirect ('admin');
+		
 		$data['css'] = array ('assets/css/searchbar.css');
 		$this->load->view('header', $data);
 		$this->load->view('home/navbar');

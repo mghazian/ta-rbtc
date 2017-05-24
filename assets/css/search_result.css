@@ -1,0 +1,38 @@
+#search-result {
+    margin: 15px;
+    background-color: #fff;
+    border-radius: 11px;
+}
+
+.content-block {
+    width: 33%;
+    height: auto;
+    display: inline-block;
+    padding: 30px;
+}
+
+.content-block:hover {
+    padding: 26px;
+}
+
+.content-block img {
+    width: 100%;
+    height: auto;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.content-block .title {
+    color: #444;
+    font-size: 1.8em;
+}
+
+.content-block .author {
+    color: #444;
+    font-size: 1.4em;
+}
+
+.content-block .year {
+    color: #444;
+    font-size: 1.4em;
+}
