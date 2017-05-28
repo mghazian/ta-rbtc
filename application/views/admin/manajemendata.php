@@ -27,7 +27,7 @@
             </div>
 
             <div class="form-group" style="background-color: #fff; border: 1px solid #ccc; padding: 9px; border-radius: 5px;">
-                <label for="fileinput">File input</label>
+                <label for="fileinput">Attached File</label>
                 <input type="file" name="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
             </div>
             <input type="submit" class="btn btn-primary" value="Submit" name="submit">

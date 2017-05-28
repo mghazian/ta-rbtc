@@ -32,6 +32,7 @@
 						<?php if ($row['sudah_publish'] != 1) echo '<button class="btn btn-sm btn-info btn-block" data-toggle="modal" data-target="#' . $row['id_poster'] . '">Ubah status</button>'; ?>
 						<a href="<?php echo base_url ('admin/edit') . '/' . $row['id_poster']; ?>"><button class="btn btn-sm btn-info btn-warning btn-block">Ubah data</button></a>
 						<a href="<?php echo base_url ('admin/hapus_poster') . '/' . $row['id_poster']; ?>"><button class="btn btn-sm btn-info btn-danger btn-block">Hapus</button></a>
+						<hr>
 						<div class="label <?php echo ($row['sudah_publish']) ? 'label-info' : 'label-default'; ?>">
 							<?php echo ($row['sudah_publish']) ? 'Sudah pernah dipampang' : 'Belum pernah dipampang'; ?>
 						</div>

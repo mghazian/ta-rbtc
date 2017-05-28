@@ -75,9 +75,9 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
+	'hostname' => '139.59.248.162',
 	'username' => 'root',
-	'password' => '',
+	'password' => 'mpplin1week',
 	'database' => 'db_ta_perpus',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',

@@ -5,7 +5,7 @@ class Admin extends CI_Controller {
 	function __construct()
 	{	
 		parent::__construct();
-
+		
 		if ( $this->session->userdata ('username') === NULL )
 			redirect ('home');
 	}
@@ -189,15 +189,26 @@ class Admin extends CI_Controller {
 
 	function poster_tercetak ($set = 0)
 	{
+		$this->load->library ('pagination');
 		$this->load->model ('poster_model');
+
+		$item_per_page = 20;
 
 		$data['poster'] = $this->poster_model->get(
 			NULL,
 			array ('sudah_publish' => 1),
 			NULL,
 			NULL,
-			$set, 20);
+			$set, $item_per_page);
 		$data['set'] = $set;
+
+		$config['base_url'] 	= base_url ('admin/poster');
+		$config['total_rows'] 	= $this->poster_model->count (NULL,
+			array ('sudah_publish' => 1),
+			NULL,
+			NULL,
+			$set, $item_per_page);
+		$config['per_page'] 	= $item_per_page;
 
 		$this->load->view('header');
 		$this->load->view('admin/navbar');
