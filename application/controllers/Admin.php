@@ -64,9 +64,9 @@ class Admin extends CI_Controller {
 	private function tambah_form_handler()
 	{
 		$this->load->library ('form_validation');
-		$this->form_validation->set_rules ('nama', 'Nama Author', 'required');
-		$this->form_validation->set_rules ('judul', 'Judul Tugas Akhir', 'required');
-		$this->form_validation->set_rules ('tahun', 'Tahun Publikasi', 'required');
+		$this->form_validation->set_rules ('nama', 'Nama Author', 'required|max_length[100]');
+		$this->form_validation->set_rules ('judul', 'Judul Tugas Akhir', 'required|max_length[250]');
+		$this->form_validation->set_rules ('tahun', 'Tahun Publikasi', 'required|max_length[4]');
 		$this->form_validation->set_rules ('rumpun', 'Rumpun Mata Kuliah', 'required');
 
 		if ($this->form_validation->run() == FALSE)
@@ -115,9 +115,9 @@ class Admin extends CI_Controller {
 	private function edit_form_handler()
 	{
 		$this->load->library ('form_validation');
-		$this->form_validation->set_rules ('nama', 'Nama Author', 'required');
-		$this->form_validation->set_rules ('judul', 'Judul Tugas Akhir', 'required');
-		$this->form_validation->set_rules ('tahun', 'Tahun Publikasi', 'required');
+		$this->form_validation->set_rules ('nama', 'Nama Author', 'required|max_length[100]');
+		$this->form_validation->set_rules ('judul', 'Judul Tugas Akhir', 'required|max_length[250]');
+		$this->form_validation->set_rules ('tahun', 'Tahun Publikasi', 'required|max_length[4]');
 		$this->form_validation->set_rules ('rumpun', 'Rumpun Mata Kuliah', 'required');
 
 		if ($this->form_validation->run() == FALSE)
@@ -258,9 +258,9 @@ class Admin extends CI_Controller {
 	private function akun_form_handler()
 	{
 		$this->load->library ('form_validation');
-		$this->form_validation->set_rules ('username', 'Username Baru', 'required');
-		$this->form_validation->set_rules ('password_lama', 'Password Lama', 'required');
-		$this->form_validation->set_rules ('password_baru', 'Password Baru', 'required');
+		$this->form_validation->set_rules ('username', 'Username Baru', 'required|max_length[100]');
+		$this->form_validation->set_rules ('password_lama', 'Password Lama', 'required|max_length[100]');
+		$this->form_validation->set_rules ('password_baru', 'Password Baru', 'required|max_length[100]');
 		$this->form_validation->set_rules ('re_password_baru', 'Ulangi Password Baru', 'required|matches[password_baru]');
 
 		if ($this->form_validation->run() == FALSE)
