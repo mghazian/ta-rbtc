@@ -40,7 +40,7 @@ class Admin extends CI_Controller {
 			$success = $this->tambah_form_handler();
 
 			if ( $success )
-				redirect ('admin/tambah');
+				redirect ('admin/poster');
 		}
 
 		$this->load->model ('rmk_model');
