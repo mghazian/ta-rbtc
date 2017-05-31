@@ -52,7 +52,7 @@
 						</tbody>
 					</table>
 					<div class="pull-right">
-						<a href="<?php echo base_url ('admin/poster') . '?order=newest'; ?>"><button class="btn btn-sm table-panel-button">Semua</button></a>
+						<a href="<?php echo base_url ('admin/poster') . '?entri=desc'; ?>"><button class="btn btn-sm table-panel-button">Semua</button></a>
 					</div>
 				</div>
 			</div>

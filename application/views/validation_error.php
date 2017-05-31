@@ -1,10 +1,7 @@
 <div class="container">
-	<div class="col-sm-12 validation-error">
-		<div class="validation-error-header">
-			<h3 style="margin: 0px"> <span class="glyphicon glyphicon-remove-sign"></span> ERROR</h3>
-		</div>
-		<div class="validation-error-body">
-			<?php echo validation_errors(); ?>
-		</div>
+	<div id="error" class="alert alert-danger alert-dismissable" role="alert">
+		<button type="button" class="close" data-dismiss="alert" aria-hidden="true" aria-label="close">×</button>
+		<span> <h2><strong> ERROR! </strong></h2><br> <?php echo validation_errors(); ?> </span>
+		<span> <?php var_dump ($error); ?> </span>
 	</div>
 </div>

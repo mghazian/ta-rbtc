@@ -1,0 +1,26 @@
+.status-circle {
+    width: 100%;
+    padding-top: 100%;
+    border-radius: 100%;
+    margin-top: .5em;
+}
+
+.status-circle-green {
+    background-color: #090;
+    border: 4px solid #3a3;
+}
+
+.status-circle-gray {
+    background-color: #666;
+    border: 4px solid #aaa;
+}
+
+.status-circle-red {
+    background-color: #900;
+    border: 4px solid #a33;
+}
+
+.status-circle-blue {
+    background-color: #009;
+    border: 4px solid #33a;
+}

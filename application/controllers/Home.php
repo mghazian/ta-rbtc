@@ -5,6 +5,7 @@ class Home extends CI_Controller {
 	function __construct()
 	{	
 		parent::__construct();
+		$this->load->library ('authentifier');
 	}
 
 	function index()
@@ -14,9 +15,8 @@ class Home extends CI_Controller {
 
 	function cari()
 	{
-		if ( $this->session->has_userdata ('username') )
-			redirect ('admin');
-		
+		$this->authentifier->auto_redirect();
+
 		$data['css'] = array ('assets/css/searchbar.css');
 		$this->load->view('header', $data);
 		$this->load->view('home/navbar');
@@ -26,16 +26,13 @@ class Home extends CI_Controller {
 
 	function login()
 	{
+		$this->authentifier->auto_redirect();
+
 		if ( ! empty ( $this->input->post() ) )
 		{
-			$this->load->model ('user_model');
-			if ( $this->user_model->find (
-					$this->input->post ('username'),
-					$this->input->post ('password')
-					))
+			if ( $this->authentifier->authenticate ($_POST['username'], $_POST['password']) )
 			{
-				$this->session->set_userdata ('username', $this->input->post ('username'));
-				redirect ('admin');
+				$this->authentifier->auto_redirect();
 			}
 		}
 
@@ -47,7 +44,7 @@ class Home extends CI_Controller {
 
 	function logout()
 	{
-		$this->session->unset_userdata ('username');
+		$this->authentifier->deauthenticate();
 
 		redirect ('home/login');
 	}

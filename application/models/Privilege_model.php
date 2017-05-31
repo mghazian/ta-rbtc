@@ -3,57 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 require_once 'Generic_model.php';
 
-class User_model extends Generic_model
+class Privilege_model extends Generic_model
 {
 	public function __construct()
 	{
 		parent::__construct();
 		$this->load->database();
-	}
-
-	/**
-	 *	Adds account
-	 *	@param array $data
-	 *	@return bool
-	 */
-	public function insert ($data)
-	{
-		//	To ensure unique combination of poster and tag pair, checking is necessary
-		if ( $this->is_exist ($data, 'data_user') )
-			return 'Data sudah ada';
-
-		if ( ! $this->db->insert ('data_user', $data) )
-			return $this->db->error();
-		
-		return TRUE;
-	}
-
-	public function update ($id_user, $data)
-	{
-		$data = $this->expunge ($data, 'id_user');
-
-		$this->db->where ('id_user', $id_user);
-
-		if ( ! $this->db->update ('data_user', $data) )
-			return $this->db->error();
-		
-		return TRUE;
-	}
-
-	/**
-	 *	Searches for given name and password
-	 *	@param string $nama
-	 *	@param string $pass
-	 *	@return bool
-	 */
-	public function find ($nama, $pass)
-	{
-		$data = array (
-			'nama' 	=> $nama,
-			'pass'	=> $pass
-		);
-
-		return $this->is_exist ($data, 'data_user');
 	}
 
 	/**
@@ -94,7 +49,7 @@ class User_model extends Generic_model
 		if ($limit !== NULL)
 			$this->db->limit = $limit;
 		
-		return $this->db->get ('data_user')->result_array();
+		return $this->db->get ('ref_privilege')->result_array();
 	}
 }
 

@@ -46,6 +46,14 @@ class Generic_model extends CI_Model
 
 		return ( $query->num_rows() > 0 );
 	}
+	
+	public function join ($array)
+	{
+		foreach ($array as $table => $condition)
+		{
+			$this->db->join ($table, $condition);
+		}
+	}
 }
 
 ?>

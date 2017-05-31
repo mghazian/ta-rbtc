@@ -2,7 +2,7 @@
 <div class="container">
 	<div class="col-sm-2"></div>
 	<div class="col-sm-8">
-		<form class="form-container" method="POST" action="<?php echo base_url ('admin/akun'); ?>">
+		<form class="form-container" method="POST" action="<?php echo base_url ('mahasiswa/setting_akun'); ?>">
 			<div class="standard-form">
 				<div class="standard-form-header">
 					<h3>AKUN</h3>
@@ -10,7 +10,7 @@
 				<div class="standard-form-body">
 					<div class="form-group">
 						<label class="form-label">Username</label>
-						<input type="text" class="form-control" name="username" value="<?php echo $akun['nama']; ?>" required>
+						<input type="text" class="form-control" name="username" value="<?php echo $akun['nama']; ?>" disabled>
 					</div>
 					<div class="form-group">
 						<label class="form-label">Password lama</label>
@@ -33,11 +33,11 @@
 				<div class="standard-form-body">
 					<div class="form-group">
 						<label class="form-label">Nama</label>
-						<input type="text" class="form-control" name="nama_asli" value="<?php echo '';#$akun['nama']; ?>">
+						<input type="text" class="form-control" name="nama_lengkap" value="<?php echo $akun['nama_lengkap']; ?>">
 					</div>
 					<div class="form-group">
-						<label class="form-label">Nomor Induk</label>
-						<input type="text" class="form-control" name="nomor_induk">
+						<label class="form-label">NRP</label>
+						<input type="text" class="form-control" name="nrp" value="<?php echo $akun['nomor_induk']; ?>">
 					</div>
 				</div>
 			</div>

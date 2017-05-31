@@ -22,8 +22,12 @@ class Poster_model extends Generic_model
 			return FALSE;
 		
 		$data = $this->expunge ($data, 'id_poster');
+		$data = array_merge ($data, array ('id_status' => 1));
 		
-		return $this->db->insert ('data_poster', $data);
+		if ( ! $this->db->insert ('data_poster', $data) )
+			return $this->db->error();
+		
+		return TRUE;
 	}
 
 	/**
@@ -34,7 +38,11 @@ class Poster_model extends Generic_model
 	public function delete ($id_poster)
 	{
 		$this->db->where ('id_poster', $id_poster);
-		return $this->db->delete ('data_poster');
+		
+		if ( ! $this->db->delete ('data_poster') )
+			return $this->db->error();
+		
+		return TRUE;
 	}
 	
 	/**
@@ -51,7 +59,11 @@ class Poster_model extends Generic_model
 		$data = $this->expunge ($data, 'id_poster');
 		
 		$this->db->where ('id_poster', $id_poster);
-		return $this->db->update ('data_poster', $data);
+
+		if ( ! $this->db->update ('data_poster', $data) )
+			return $this->db->error();
+		
+		return TRUE;
 	}
 
 	/**
@@ -64,15 +76,18 @@ class Poster_model extends Generic_model
 	 *	@param mixed $limit
 	 *	@return array
 	 */
-	public function get ($column = NULL, $condition = NULL, $group = NULL, $order = NULL, $offset = 0, $limit = NULL)
+	public function get ($column = NULL, $condition = NULL, $like = NULL, $group = NULL, $order = NULL, $offset = 0, $limit = NULL)
 	{
-		if ($column !== NULL)
+		if ($column != NULL)
 			$this->db->select ($column);
 		
-		if ($condition !== NULL)
+		if ($condition != NULL)
 			$this->db->where ($condition);
 		
-		if ($group !== NULL)
+		if ($like != NULL)
+			$this->db->like ($like);
+		
+		if ($group != NULL)
 		{	
 			if ( array_key_exists ('group_by', $group) )
 				$this->db->group_by ($group['group_by']);
@@ -81,7 +96,7 @@ class Poster_model extends Generic_model
 				$this->db->having ($group['having']);
 		}
 
-		if ($order !== NULL)
+		if ($order != NULL)
 		{
 			foreach ($order as $key => $value)
 				$this->db->order_by($key, $value);
@@ -89,10 +104,8 @@ class Poster_model extends Generic_model
 
 		$this->db->offset ($offset);
 		
-		if ($limit !== NULL)
+		if ($limit != NULL)
 			$this->db->limit ($limit);
-
-		$this->db->join ('ref_rmk', 'ref_rmk.id_rmk = data_poster.id_rmk');
 		
 		return $this->db->get ('data_poster')->result_array();
 	}
@@ -105,12 +118,15 @@ class Poster_model extends Generic_model
 	 *	@param $limit
 	 *	@return int
 	 */
-	public function count ($condition = NULL, $group = NULL, $offset = 0, $limit = NULL)
+	public function count ($condition = NULL, $like = NULL, $group = NULL, $offset = 0, $limit = NULL)
 	{
-		if ($condition !== NULL)
+		if ($condition != NULL)
 			$this->db->where ($condition);
+			
+		if ($like != NULL)
+			$this->db->like ($like);
 		
-		if ($group !== NULL)
+		if ($group != NULL)
 		{	
 			if ( array_key_exists ('group_by', $group) )
 				$this->db->group_by ($group['group_by']);
@@ -121,7 +137,7 @@ class Poster_model extends Generic_model
 
 		$this->db->offset ($offset);
 		
-		if ($limit !== NULL)
+		if ($limit != NULL)
 			$this->db->limit ($limit);
 		
 		return $this->db->get ('data_poster')->num_rows();

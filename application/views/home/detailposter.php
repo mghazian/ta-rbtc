@@ -1,4 +1,9 @@
 <div class="container">
+	<div class="row">
+		<div style="display: inline-block;">
+			<a href="<?php echo $previous_link; ?>"><button class="btn btn-default" style="display: inline-block"><i class="fa fa-arrow-left"></i> Kembali</button></a>
+		</div>
+	</div>
 	<div id="poster">
 		<div class="poster-header">
 			<?php echo $poster['judul_publikasi']; ?>

@@ -2,7 +2,7 @@
 <div class="container">
     <div class="col-sm-2"></div>
     <div class="col-sm-8" style="margin-left: auto; margin-right: auto; background-color">
-        <form method="POST" action="<?php echo base_url ('admin/edit') . '/' . $poster['id_poster']; ?>" enctype="multipart/form-data">
+        <form method="POST" action="<?php echo base_url ('mahasiswa/edit_berkas'); ?>" enctype="multipart/form-data">
             <div class="standard-form">
                 <div class="standard-form-header">
                     <h3>DATA TUGAS AKHIR</h3>
@@ -39,7 +39,7 @@
 
                     <div class="form-group">
                         <label for="abstrak">Abstrak </label>
-                        <textarea type="text" name="abstrak" class="form-control" placeholder="" value="<?php echo $poster['abstrak']; ?>"></textarea>
+                        <textarea type="text" name="abstrak" class="form-control" placeholder=""><?php echo $poster['abstrak']; ?></textarea>
                     </div>
 
                     <div class="form-group">

@@ -1,6 +1,5 @@
 <div class="container">
-	<div class="col-sm-1"></div>
-	<div class="col-sm-10">
+	<div class="col-sm-12">
 		<h4> Pencarian </h4>
         <div id="search-bar">
             <form class="form-horizontal" role="form" method="GET" action="<?php echo base_url ('search/result'); ?>">
@@ -30,10 +29,14 @@
 		<div id="search-result">
 			<?php foreach ($poster as $obj) { ?>
 			<a href="<?php echo base_url ('search/poster') . '/' . $obj['id_poster']; ?>"><div class="content-block">
-				<img src="<?php echo base_url ($obj['path_image']); ?>">
-				<div class="title"><?php echo $obj['judul_publikasi']; ?></div>
-				<div class="author"><?php echo $obj['nama_penulis']; ?></div>
-				<div class="year"><?php echo $obj['tahun_publikasi']; ?></div>
+                <div class="col-sm-4">
+				    <img src="<?php echo base_url ($obj['path_image']); ?>">
+                </div>
+                <div class="col-sm-8">
+                    <div class="title"><?php echo $obj['judul_publikasi']; ?></div>
+                    <div class="author"><?php echo $obj['nama_penulis']; ?></div>
+                    <div class="year"><?php echo $obj['tahun_publikasi']; ?></div>
+                </div>
 			</div></a>
 			<?php } ?>
 		</div>

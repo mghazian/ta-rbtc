@@ -45,9 +45,17 @@
 					</div>
 				</center>
 			</div>
-			<div class="button-container" style="margin-top: -15px; margin-left: 25px;">
-				<a href="<?php echo base_url ('admin/hapus_poster_handler') . '/' . $poster['id_poster']; ?>"><button class="btn table-panel-button">Hapus</button></a>
-				<a href="<?php echo $_SERVER['HTTP_REFERER']; ?>"><button class="btn table-panel-button" style="background-color: #333;">Kembali</button></a>
+			<div class="button-container" style="margin-top: -15px; margin-left: 25px; margin-right: 25px;">
+				<div class="pull-left">
+					<form method="POST" action="<?php echo base_url ('admin/validasi'); ?>">
+						<input type="text" name="id_poster" value="<?php echo $poster['id_poster']; ?>" hidden />
+						<button class="btn table-panel-button" type="submit" name="action" value="1">Terima</button>
+						<button class="btn table-panel-button" type="submit" name="action" value="0">Tolak</button>
+					</form>
+				</div>
+				<div class="pull-right">
+					<a href="<?php echo $_SERVER['HTTP_REFERER']; ?>"><button class="btn table-panel-button" style="background-color: #333;">Kembali</button></a>
+				</div>
 			</div>
 		</div>
 	</div>
