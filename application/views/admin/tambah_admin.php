@@ -2,7 +2,7 @@
 <div class="container">
 	<div class="col-sm-2"></div>
 	<div class="col-sm-8">
-		<form class="form-container" method="POST" action="<?php echo base_url ('admin/tambah_mahasiswa'); ?>">
+		<form class="form-container" method="POST" action="<?php echo base_url ('admin/tambah_admin'); ?>">
 			<div class="standard-form">
 				<div class="standard-form-header">
 				</div>

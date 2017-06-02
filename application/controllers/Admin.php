@@ -408,6 +408,9 @@ class Admin extends CI_Controller {
 
 	function tambah_admin()
 	{
+		$this->load->model ('privilege_model');
+		$privilege = $this->privilege_model->get (NULL, array ('nama_privilege' => 'administrator')); var_dump ($privilege);
+
 		if ( ! empty ($this->input->post()) )
 			$result = $this->tambah_admin_handler ();
 
@@ -446,6 +449,8 @@ class Admin extends CI_Controller {
 			'pass'			=>	$_POST['password'],
 			'id_privilege'	=>	$privilege[0]['id_privilege']
 		);
+
+		var_dump ($data);
 
 		return $this->user_model->insert ($data);
 	}
