@@ -90,7 +90,7 @@
 							</div>
 						</div>
 						<div class="row" style="margin-top: 10px;">
-							<?php if ( $poster['id_status'] == 3) echo '<a href="' . base_url ('mahasiswa/form_berkas') . '"><button class="btn btn-primary btn-block">REVISI</button></a>'; ?>
+							<?php if (isset ($poster)) if ( $poster['id_status'] == 3) echo '<a href="' . base_url ('mahasiswa/form_berkas') . '"><button class="btn btn-primary btn-block">REVISI</button></a>'; ?>
 						</div>
 					</div>
 				</div>
