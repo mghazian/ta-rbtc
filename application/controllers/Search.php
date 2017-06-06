@@ -12,7 +12,7 @@ class Search extends CI_Controller {
 		redirect ('home');
 	}
 
-	function result()
+	function result($set = 0)
 	{
 		function get_setter ($param)
 		{
@@ -21,13 +21,18 @@ class Search extends CI_Controller {
 			return '';
 		}
 
+		$this->load->library ('pagination');
 		$this->load->model ('search_model');
+		$this->load->model ('poster_model');
+
+		$item_per_page = 20;
+
 		$query['judul_publikasi'] = get_setter ('judul');
 		$query['tahun_publikasi'] = get_setter ('tahun');
 		$query['nama_penulis'] = get_setter ('author');
 
 		$data['request'] = array ('judul' => get_setter ('judul'), 'tahun' => get_setter ('tahun'), 'author' => get_setter ('author'))	;
-		$data['poster'] = $this->search_model->search ($query);
+		$data['poster'] = $this->poster_model->get (NULL, NULL, $query, NULL, NULL, $set * $item_per_page, $item_per_page);
 		$data['previous_link'] = base_url ('home');
 		$data['sitemap'] = array (
 			'Home' => base_url ('home'),
@@ -35,6 +40,12 @@ class Search extends CI_Controller {
 		);
 
 		$css['css'] = array ('assets/css/searchbar.css', 'assets/css/search_result.css');
+
+		$config['base_url'] 	= base_url ('search/result');
+		$config['total_rows'] 	= $this->poster_model->count (NULL, $query);
+		$config['per_page'] 	= $item_per_page;
+
+		$this->pagination->initialize ($config);
 
 		$this->load->view ('header', $css);
 		$this->load->view ('home/navbar');

@@ -140,7 +140,7 @@ class Admin extends CI_Controller {
 		{
 			$uploaded_file = $this->uploader->upload ($_FILES['file']);
 			if ($uploaded_file == NULL)
-				return FALSE;
+				return 'Ada kesalahan pada pengunggahan file!';
 		}
 		
 		$input = array (
@@ -189,14 +189,14 @@ class Admin extends CI_Controller {
 		}
 
 		$this->poster_model->join (array ('ref_rmk' => 'ref_rmk.id_rmk = data_poster.id_rmk'));
-		$data['poster'] = $this->poster_model->get(NULL, $rule['condition'], $rule['keyword'], NULL, $rule['order'], $set, $item_per_page);
+		$data['poster'] = $this->poster_model->get(NULL, $rule['condition'], $rule['keyword'], NULL, $rule['order'], $set * $item_per_page, $item_per_page);
 
 		$data['set'] = $set;
 		$data['rmk'] = $this->rmk_model->all();
 		$data['status'] = $this->status_model->all();
 		
 		$config['base_url'] 	= base_url ('admin/poster');
-		$config['total_rows'] 	= $this->poster_model->count ($rule['condition'], $rule['keyword'], NULL, $set, $item_per_page);
+		$config['total_rows'] 	= $this->poster_model->count ($rule['condition'], $rule['keyword']);
 		$config['per_page'] 	= $item_per_page;
 
 		$this->pagination->initialize ($config);

@@ -13,6 +13,7 @@
 				<div><center><h2><b><i class="fa fa-id-badge"></i> PERISET</b></h2></center></div>
 				<hr>
 				<div><?php echo $poster['nama_penulis']; ?></div>
+				<div><?php echo $poster['nrp_penulis']; ?></div>
 				<div style="margin-top: 36px;">
 					<div class="label label-info"><?php echo $poster['tahun_publikasi']; ?></div>
 					<div class="label label-success"><?php echo $poster['alias']; ?></div>

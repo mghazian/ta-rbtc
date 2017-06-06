@@ -41,4 +41,9 @@
 			<?php } ?>
 		</div>
 	</div>
+    <div class="col-sm-12">
+        <div class="pagination-container" style="border-radius: 20vw; width: 20vw; margin-right: auto; margin-left: auto;; background-color: #333;">
+            <center><?php echo $this->pagination->create_links(); ?></center>
+        </div>
+    </div>
 </div>
